@@ -148,6 +148,10 @@ def main():
             'first_trade': first_day,
             # Created before the token's first trade: an account that existed before the coin, not made for it.
             'x_predates_token': (u['created_at'][:10] < first_day) if u and first_day else None,
+            # Days from the account's creation to the token's first trade; positive = the account came first.
+            'x_account_lead_days': (datetime.datetime.strptime(first_day, '%Y-%m-%d') - datetime.datetime.strptime(u['created_at'][:10], '%Y-%m-%d')).days if u and first_day else None,
+            # An account made at least 30 days before the token, not set up for its launch.
+            'x_predates_token_30d': ((datetime.datetime.strptime(first_day, '%Y-%m-%d') - datetime.datetime.strptime(u['created_at'][:10], '%Y-%m-%d')).days >= 30) if u and first_day else None,
             'ansem_mentions': len(hits),
             'ansem_strong_mentions': sum(1 for hit in hits if 'mint' in hit['kinds'] or 'account' in hit['kinds']),
             'ansem_first': min((hit['at'] for hit in hits), default=None),

@@ -16,6 +16,7 @@ Of 24.6M tokens launched on pump.fun, **390 were alive above $100k** on October 
 
 What the survivors are, from section 11 of the report (collected November 5, 2026):
 
+- 65% of survivors with an X account had one made at least 30 days before the token's first trade. Those have stayed above $100k for a median of 217–598 days, against 68 for accounts made in the month before launch (chart in section 11).
 - **Web presence:** 90% list an X account and 90% a website. Only 4% link to GitHub, and 4% are also on another chain.
 - **X activity:** 72% posted on X in the last 30 days. The median account has about 3,000 followers.
 - **Ansem:** he posted about 16 survivors by mint or by X account.
