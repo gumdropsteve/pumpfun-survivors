@@ -31,7 +31,9 @@ What the survivors are, from section 11 of the report (collected November 5, 202
 | `report/` | The report: full and one-page versions, as PDF and HTML. Section 12 has the methodology and sources, and every row of section 11 names its source. |
 | `data/survivors.csv` | One row per survivor: market cap, liquidity, holders, top-10 share, age, peak, lifetime volume, days above $100k, creator fees. |
 | `data/survivor_enrichment.csv` | One row per survivor: socials, links, pairs, X account stats, Ansem mentions, dev buy and holdings, creator-reward status, buy sizes and hold times, a classification (category, narratives, language, software, tokenomics, doxxed dev, with quoted evidence), and the hackathon result with its source posts. List fields are `|`-separated. |
-| `sql/` | The Dune queries. `{{SURVIVORS}}` / `{{MINTS}}` stand for the survivor rows from `data/survivors.csv`. |
+| `queries.yml`, `queries/` | The dashboard's 15 chart queries in Dune's query-repo format: one file per query, `<name>___<query id>.sql`, linked to its query on Dune. |
+| `uploads/` | The 10 tables those charts read, as uploaded to Dune (`dune.mysticalhead.dataset_<file name>`). |
+| `sql/` | The research queries behind those tables, run on Dune's raw data. `{{SURVIVORS}}` / `{{MINTS}}` stand for the survivor rows from `data/survivors.csv`. |
 | `collect/` | The enrichment collectors: DexScreener and CoinGecko (`enrich.py`), X API (`enrich_x.py`), Claude classification (`enrich_classify.py`). |
 
 The per-token files list 388 survivors. One survivor is left out of them at the publisher's request; it is counted in every total.
